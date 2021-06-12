@@ -1,7 +1,8 @@
 is_package: true
 container:
   type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: '@theme:standard-page.html'}
   event_bindings: {}
 components:
 - type: ColumnPanel
@@ -14,62 +15,71 @@ components:
     name: card_1
     layout_properties: {grid_position: 'GFMHGZ,ZPVCFX'}
     components:
+    - type: GridPanel
+      properties: {}
+      name: grid_panel_1
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN WNRRJM,BPLFDV'}
+      event_bindings: {}
+      components:
+      - type: Label
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+          visible: true, text: 'a:    ', font_size: null, font: '', spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: a
+        layout_properties: {grid_position: 'YICONZ,JRKJPJ WONSUJ,CVWBCZ', row: ANACOC,
+          width_xs: 12, col_xs: 0}
+        event_bindings: {}
+    - type: TextBox
+      properties: {}
+      name: text_box_1
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN AWRCRJ,TZPTAA', row: GQVIFZ,
+        width_xs: 12, col_xs: 0}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'b:    ', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: b
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN SDESFF,PXGJTC'}
+      event_bindings: {}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_2
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN ZSDGVT,OWGCRB'}
+      event_bindings: {}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'c:', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: c
+      layout_properties: {slot: default, grid_position: 'XSWWXP,PAAXHN XMWEYG,ZTRFWS'}
+      event_bindings: {}
+    - type: TextBox
+      properties: {}
+      name: text_box_3
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN BHZQFT,SQUZUS'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'd:    ', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: d
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN SDYLIG,ZGYTFE'}
+      event_bindings: {}
+    - type: TextBox
+      properties: {}
+      name: text_box_4
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN YBJZRT,JZSVDH'}
     - type: Plot
       properties: {}
       name: plot_1
       layout_properties: {grid_position: 'XSWWXP,ZKVZWV'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'a:    ', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: a
-    layout_properties: {grid_position: 'YICONZ,JRKJPJ WONSUJ,CVWBCZ'}
-    event_bindings: {}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'b:    ', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: b
-    layout_properties: {grid_position: 'YICONZ,JRKJPJ VRMOTC,TTMAIW'}
-    event_bindings: {}
-  - type: TextBox
-    properties: {}
-    name: text_box_1
-    layout_properties: {grid_position: 'YICONZ,GICUFR SWMFLL,XNRCIY'}
-  - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false}
-    name: text_box_2
-    layout_properties: {grid_position: 'YICONZ,GICUFR BNMIXH,WIUDKC'}
-    event_bindings: {}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'c:', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: c
-    layout_properties: {slot: default, grid_position: 'DICRKL,PJZSKY'}
-    event_bindings: {}
-  - type: TextBox
-    properties: {}
-    name: text_box_3
-    layout_properties: {grid_position: 'DICRKL,WZZIYN'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'd:    ', font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: d
-    layout_properties: {grid_position: 'ONCYZZ,UHQBFJ'}
-    event_bindings: {}
-  - type: TextBox
-    properties: {}
-    name: text_box_4
-    layout_properties: {grid_position: 'ONCYZZ,MYSRVA'}
+      event_bindings: {}
   event_bindings: {}
 - type: FlowPanel
   properties: {}
