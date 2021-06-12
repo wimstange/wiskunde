@@ -2,6 +2,7 @@ is_package: true
 container:
   type: HtmlTemplate
   properties: {html: '@theme:standard-page.html'}
+  event_bindings: {}
 components:
 - type: ColumnPanel
   properties: {col_widths: '{}'}
@@ -44,6 +45,7 @@ components:
       background: '', bold: false, underline: false}
     name: text_box_2
     layout_properties: {grid_position: 'YICONZ,GICUFR BNMIXH,WIUDKC'}
+    event_bindings: {}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'c:', font_size: null, font: '', spacing_above: small,
