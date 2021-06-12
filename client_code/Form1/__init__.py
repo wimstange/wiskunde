@@ -15,8 +15,12 @@ class Form1(Form1Template):
     """This method is called when the button is clicked"""
     ### Lissajous figuur zonder gebruik van numpy, met gebruik matplotlib.pyplot
 
+    a=int(self.text_box_1.text)
+    b=int(self.text_box_2.text)
+    c=int(self.text_box_3.text)
+    d=int(self.text_box_4.text)
     
-    self.plot_1.data = self.lissajous(5,14,32,7,1000)
+    self.plot_1.data = self.lissajous(a,b,c,d,10000)
     
   def lissajous(self,a,b,c,d,e):
       x, y = [], []

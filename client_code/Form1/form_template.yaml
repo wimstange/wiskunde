@@ -11,36 +11,39 @@ components:
   - type: ColumnPanel
     properties: {role: card, col_widths: '{}'}
     name: card_1
-    layout_properties: {grid_position: 'GFMHGZ,HHPAYN'}
+    layout_properties: {grid_position: 'GFMHGZ,ZPVCFX'}
     components:
     - type: Plot
       properties: {}
       name: plot_1
-      layout_properties: {grid_position: 'CYQAMZ,NYJAQL'}
+      layout_properties: {grid_position: 'XSWWXP,ZKVZWV'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'a:    ', font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
     name: a
-    layout_properties: {grid_position: 'KIIGKT,GVLIDO'}
+    layout_properties: {grid_position: 'YICONZ,JRKJPJ WONSUJ,CVWBCZ'}
     event_bindings: {}
-  - type: TextBox
-    properties: {}
-    name: text_box_1
-    layout_properties: {grid_position: 'KIIGKT,WSMITA'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'b:    ', font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
     name: b
-    layout_properties: {grid_position: 'YICONZ,JRKJPJ'}
+    layout_properties: {grid_position: 'YICONZ,JRKJPJ VRMOTC,TTMAIW'}
     event_bindings: {}
   - type: TextBox
     properties: {}
+    name: text_box_1
+    layout_properties: {grid_position: 'YICONZ,GICUFR SWMFLL,XNRCIY'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
     name: text_box_2
-    layout_properties: {grid_position: 'YICONZ,GICUFR'}
+    layout_properties: {grid_position: 'YICONZ,GICUFR BNMIXH,WIUDKC'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'c:', font_size: null, font: '', spacing_above: small,
