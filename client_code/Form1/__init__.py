@@ -24,7 +24,7 @@ class Form1(Form1Template):
       fig = go.Figure(data=go.Scatter(x=x, y=y))
       return(fig)
 
-    self.plot_1 = lissajous(4,14,32,7,1000)
+    self.plot_1.data = lissajous(4,14,32,7,1000)
     
 
 
