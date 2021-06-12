@@ -8,6 +8,16 @@ class Form1(Form1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.text_box_1.text = "1"
+    self.text_box_2.text = "1"
+    self.text_box_3.text = "1"
+    self.text_box_4.text = "1"
+    a=int(self.text_box_1.text)
+    b=int(self.text_box_2.text)
+    c=int(self.text_box_3.text)
+    d=int(self.text_box_4.text)
+    
+    self.plot_1.data = self.lissajous(a,b,c,d,10000)
 
     # Any code you write here will run when the form opens.
 
