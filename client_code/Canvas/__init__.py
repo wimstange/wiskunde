@@ -25,4 +25,6 @@ class Canvas(CanvasTemplate):
   
     c.fill()
     c.stroke()
+    
+    arc(200, 200, 50, 200, 3, 40, anticlockwise)
 
