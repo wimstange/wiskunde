@@ -20,4 +20,8 @@ class Canvas(CanvasTemplate):
     c.fill_style = "#E0E0E0"
     c.fill()
     c.stroke()
+    c.line_width=4
+    c.font='72px'
+    c.fill_text('WimStange',200,150)
+  
 
