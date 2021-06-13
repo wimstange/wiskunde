@@ -13,7 +13,7 @@ components:
       visible: true, spacing_above: small, spacing_below: small, background: '#dff68e'}
     name: canvas_1
     layout_properties: {grid_position: 'SSJMVV,RAXZLD'}
-    event_bindings: {show: canvas_1_show}
+    event_bindings: {show: canvas_1_show, reset: canvas_1_reset}
 - type: FlowPanel
   properties: {}
   name: navbar_links
@@ -26,3 +26,6 @@ components:
   name: label_1
   layout_properties: {slot: title}
   event_bindings: {}
+- type: Timer
+  properties: {}
+  name: timer_1

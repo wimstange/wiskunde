@@ -46,3 +46,8 @@ class Canvas(CanvasTemplate):
     
     c.close_path()
 
+  def canvas_1_reset(self, **event_args):
+    """This method is called when the canvas is reset and cleared, such as when the window resizes, or the canvas is added to a form."""
+    pass
+
+
