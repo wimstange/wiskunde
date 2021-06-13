@@ -9,8 +9,8 @@ components:
   layout_properties: {slot: default}
   components:
   - type: Canvas
-    properties: {role: null, height: '300', tooltip: '', border: '', foreground: '',
-      visible: true, spacing_above: small, spacing_below: small, background: ''}
+    properties: {role: null, height: '600', tooltip: '', border: '', foreground: '',
+      visible: true, spacing_above: small, spacing_below: small, background: '#dff68e'}
     name: canvas_1
     layout_properties: {grid_position: 'SSJMVV,RAXZLD'}
     event_bindings: {show: canvas_1_show}
@@ -18,3 +18,11 @@ components:
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Tekenen op het canvas, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_1
+  layout_properties: {slot: title}
+  event_bindings: {}
