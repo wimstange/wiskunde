@@ -1,0 +1,130 @@
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Hypocycloide, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'YOYGHD,FDRXXN'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'formule:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'WUGORL,LBYPDP'}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{}'}
+    name: card_1
+    layout_properties: {grid_position: 'GFMHGZ,ZPVCFX'}
+    components:
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_1
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN PRGGLW,XITMJL'}
+      event_bindings: {}
+    - type: GridPanel
+      properties: {}
+      name: grid_panel_1
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN WNRRJM,XOJBKT'}
+      event_bindings: {}
+      components:
+      - type: Label
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+          visible: true, text: 'Vul een waarde in voor a:    ', font_size: null, font: '',
+          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '', bold: false, underline: false, icon: ''}
+        name: a
+        layout_properties: {grid_position: 'YICONZ,JRKJPJ WONSUJ,CVWBCZ', row: ANACOC,
+          width_xs: 12, col_xs: 0, width: 169.5}
+        event_bindings: {}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN WNRRJM,ZFGEYT', row: GQVIFZ,
+        width_xs: 12, col_xs: 0}
+      event_bindings: {}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'Vul een waarde in voor b:    ', font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: b
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN SDESFF,PXGJTC'}
+      event_bindings: {}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_2
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN SDESFF,GXTADZ'}
+      event_bindings: {}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'Vul een waarde in voor c:', font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: c
+      layout_properties: {slot: default, grid_position: 'XSWWXP,PAAXHN XMWEYG,ZTRFWS'}
+      event_bindings: {}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_3
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN XMWEYG,WWOXDX'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'Vul een waarde in voor d:    ', font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: d
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN SDYLIG,ZGYTFE'}
+      event_bindings: {}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_4
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN SDYLIG,FICQPO'}
+    - type: Plot
+      properties: {height: 407}
+      name: plot_1
+      layout_properties: {grid_position: 'XSWWXP,ZKVZWV'}
+      event_bindings: {}
+  event_bindings: {}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Een aantal interessante krommen, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_1
+  layout_properties: {slot: title}
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Toon grafiek, font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false, icon: ''}
+  name: button_1
+  layout_properties: {slot: default}
+  event_bindings: {click: button_1_click}
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: '@theme:standard-page.html'}
+  event_bindings: {}

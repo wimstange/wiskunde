@@ -1,10 +1,9 @@
-from ._anvil_designer import Form1Template
+from ._anvil_designer import Form3Template
 from anvil import *
 import plotly.graph_objects as go
 import math
 
-class Form1(Form1Template):
-
+class Form3(Form3Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -18,7 +17,7 @@ class Form1(Form1Template):
     d=int(self.text_box_4.text)
     
     self.plot_1.data = self.lissajous(a,b,c,d,10000)
-
+    self.plot_1.layout = {'title': 'Kromme van Lissajous'}
     # Any code you write here will run when the form opens.
 
   def button_1_click(self, **event_args):
@@ -31,6 +30,7 @@ class Form1(Form1Template):
     d=int(self.text_box_4.text)
     
     self.plot_1.data = self.lissajous(a,b,c,d,10000)
+    self.plot_1.layout = {'title': 'Kromme van Lissajous'}
     
   def lissajous(self,a,b,c,d,e):
       x, y = [], []

@@ -12,7 +12,7 @@ components:
   components:
   - type: Label
     properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Kromme van Lissajou, font_size: null, font: '', spacing_above: small,
+      visible: true, text: Kromme van Lissajous, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
     name: label_2
@@ -37,7 +37,7 @@ components:
     - type: GridPanel
       properties: {}
       name: grid_panel_1
-      layout_properties: {grid_position: 'XSWWXP,PAAXHN WNRRJM,BPLFDV'}
+      layout_properties: {grid_position: 'XSWWXP,PAAXHN WNRRJM,XOJBKT'}
       event_bindings: {}
       components:
       - type: Label
