@@ -1,5 +1,5 @@
 services: []
-startup: {type: form, module: Krommen}
+startup: {type: form, module: Canvas}
 package_name: Krommen
 allow_embedding: false
 name: Krommen

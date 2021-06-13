@@ -12,14 +12,14 @@ class Canvas(CanvasTemplate):
   def transform(self, points,multp,add):
     result = []
     for point in points:
-        result.append((multp*point[0]+add,multp*point[1]+add+60))
+        result.append((multp*point[0]+add,multp*point[1]+add))
     return result
   
   def canvas_1_show(self, **event_args):
     """This method is called when the Canvas is shown on the screen"""
     c = self.canvas_1
     MULTP = 64
-    ADD = 20
+    ADD = 75
     DISTANCE = 20 
     pointsBase = [(2,0),(4,0),(6,0),
               (1,2),(3,2),(5,2),(7,2),
@@ -40,7 +40,7 @@ class Canvas(CanvasTemplate):
       c.stroke_style = "#2196F3"
       c.line_width = 3
       c.fill_style = "rgba(255,0,0,1)"
-  
+
       c.fill()
       c.stroke()
     
