@@ -3,6 +3,7 @@ from anvil import *
 from ..Spiraal_van_Archimedes import Spiraal_van_Archimedes
 from ..Hypocycloide import Hypocycloide
 from ..Lissajous import Lissajous
+from ..Cycloide import Cycloide
 from ..Canvas import Canvas
 
 class Krommen(KrommenTemplate):
@@ -36,6 +37,12 @@ class Krommen(KrommenTemplate):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
     self.content_panel.add_component(Spiraal_van_Archimedes())
+
+  def link_5_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.content_panel.clear()
+    self.content_panel.add_component(Cycloide())
+
 
 
 

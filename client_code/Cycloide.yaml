@@ -1,0 +1,84 @@
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'formule:
+
+        x = r*t - r*sin(t)
+
+        y = r - r*cos(t)', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'WUGORL,LBYPDP'}
+    event_bindings: {}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{"JOLPVC":15,"IUDWFS":5,"ZKVZWV":40}'}
+    name: card_1
+    layout_properties: {grid_position: 'GFMHGZ,ZPVCFX'}
+    components:
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_3
+      layout_properties: {grid_position: 'XSWWXP,JOLPVC UQWVIJ,IENLDV'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'Geef de waarde van r:', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '#f0f2e9',
+        bold: false, underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'XSWWXP,JOLPVC WYWVMB,SFDASI'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_2
+      layout_properties: {grid_position: 'XSWWXP,JOLPVC QFRMDK,WULTFA'}
+    - type: Button
+      properties: {role: primary-color, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Toon grafiek, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: button_1
+      layout_properties: {slot: default, grid_position: 'XSWWXP,JOLPVC PKFBKR,CVTGOG'}
+      event_bindings: {click: button_1_click}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_4
+      layout_properties: {grid_position: 'XSWWXP,IUDWFS WTMIZQ,HZMQXC'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+        background: '#f0e6e6', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'XSWWXP,IUDWFS MGUOCV,HZLRYY'}
+      event_bindings: {}
+    - type: Plot
+      properties: {height: 407}
+      name: plot_1
+      layout_properties: {grid_position: 'XSWWXP,ZKVZWV'}
+      event_bindings: {}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_1
+    layout_properties: {grid_position: 'EQUBMT,OINMWU'}
+  event_bindings: {}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Cycloide, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_1
+  layout_properties: {slot: title}
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: '@theme:standard-page.html'}
+  event_bindings: {}
