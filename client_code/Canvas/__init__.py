@@ -31,9 +31,10 @@ class Canvas(CanvasTemplate):
     
     
     
-    for p in pointsBase:
+    for p in points:
       c.begin_path()
-      c.arc(p[0],p[1], 0, 2*math.pi,True)
+      c.arc(p[0],p[1], 20,
+            0, 2*math.pi,True)
     
   
       c.stroke_style = "#2196F3"
