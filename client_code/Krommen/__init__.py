@@ -2,6 +2,7 @@ from ._anvil_designer import KrommenTemplate
 from anvil import *
 from ..Hypocycloide import Hypocycloide
 from ..Lissajous import Lissajous
+from ..Canvas import Canvas
 
 class Krommen(KrommenTemplate):
   def __init__(self, **properties):
@@ -20,5 +21,19 @@ class Krommen(KrommenTemplate):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
     self.content_panel.add_component(Lissajous())
+
+  def form_show(self, **event_args):
+    """This method is called when the HTML panel is shown on the screen"""
+    pass
+
+  def link_3_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.content_panel.clear()
+    self.content_panel.add_component(Canvas())
+
+
+
+
+
 
 
