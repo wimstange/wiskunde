@@ -1,9 +1,9 @@
 services: []
+startup: {type: form, module: Krommen}
 package_name: Krommen
 allow_embedding: false
 name: Krommen
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
 metadata: {}
-startup_form: Lissajous
 db_schema: []
 renamed: true
