@@ -8,6 +8,33 @@ class Canvas(CanvasTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run when the form opens.
+    self.punten = [(200,150), (300,200)]
+    self.MULTP = 64
+    self.ADD = 75
+    self.DISTANCE = 20 
+    self.pointsBase = [(2,0),(4,0),(6,0),
+              (1,2),(3,2),(5,2),(7,2),
+              (0,4),(2,4),(4,4),(6,4),(8,4),
+              (1,6),(3,6),(5,6),(7,6),
+              (2,8),(4,8),(6,8)]
+    
+    self.points = self.transform(self.pointsBase,self.MULTP,self.ADD)
+    self.lines = [[0,1],[1,2],
+         [0,3],[0,4],[1,4],[1,5],[2,5],[2,6],
+         [3,4],[4,5],[5,6],
+         [3,7],[3,8],[4,8],[4,9],[5,9],[5,10],[6,10],[6,11],
+         [7,8],[8,9],[9,10],[10,11],
+         [7,12],[8,12],[8,13],[9,13],[9,14],[10,14],[10,15],[11,15],
+         [12,13],[13,14],[14,15],
+         [12,16],[13,16],[13,17],[14,17],[14,18],[15,18],
+         [16,17],[17,18]]
+    
+    self.midPoints = []
+
+    for l in self.lines:
+    
+      self.midPoints.append((int((self.points[l[0]][0]+self.points[l[1]][0])/2),
+                       int((self.points[l[0]][1]+self.points[l[1]][1])/2)))
    
   def afstand(self,p,q):
     return math.sqrt((p[0]-q[0])*(p[0]-q[0])+(p[1]-q[1])*(p[1]-q[1]))
@@ -28,38 +55,39 @@ class Canvas(CanvasTemplate):
   def canvas_1_show(self, **event_args):
     """This method is called when the Canvas is shown on the screen"""
     c = self.canvas_1
-    MULTP = 64
-    ADD = 75
-    DISTANCE = 20 
-    pointsBase = [(2,0),(4,0),(6,0),
-              (1,2),(3,2),(5,2),(7,2),
-              (0,4),(2,4),(4,4),(6,4),(8,4),
-              (1,6),(3,6),(5,6),(7,6),
-              (2,8),(4,8),(6,8)]
+    print(self.points)
+#    MULTP = 64
+#    ADD = 75
+#    DISTANCE = 20 
+#    pointsBase = [(2,0),(4,0),(6,0),
+#              (1,2),(3,2),(5,2),(7,2),
+#              (0,4),(2,4),(4,4),(6,4),(8,4),
+#              (1,6),(3,6),(5,6),(7,6),
+#              (2,8),(4,8),(6,8)]
     
-    points = self.transform(pointsBase,MULTP,ADD)
-    lines = [[0,1],[1,2],
-         [0,3],[0,4],[1,4],[1,5],[2,5],[2,6],
-         [3,4],[4,5],[5,6],
-         [3,7],[3,8],[4,8],[4,9],[5,9],[5,10],[6,10],[6,11],
-         [7,8],[8,9],[9,10],[10,11],
-         [7,12],[8,12],[8,13],[9,13],[9,14],[10,14],[10,15],[11,15],
-         [12,13],[13,14],[14,15],
-         [12,16],[13,16],[13,17],[14,17],[14,18],[15,18],
-         [16,17],[17,18]]
+#    points = self.transform(pointsBase,MULTP,ADD)
+#    lines = [[0,1],[1,2],
+#         [0,3],[0,4],[1,4],[1,5],[2,5],[2,6],
+#         [3,4],[4,5],[5,6],
+#         [3,7],[3,8],[4,8],[4,9],[5,9],[5,10],[6,10],[6,11],
+#         [7,8],[8,9],[9,10],[10,11],
+#         [7,12],[8,12],[8,13],[9,13],[9,14],[10,14],[10,15],[11,15],
+#         [12,13],[13,14],[14,15],
+#         [12,16],[13,16],[13,17],[14,17],[14,18],[15,18],
+#         [16,17],[17,18]]
     
-    midPoints = []
+  #  midPoints = []
 
-    for l in lines:
+ #   for l in lines:
     
-      midPoints.append((int((points[l[0]][0]+points[l[1]][0])/2),
-                       int((points[l[0]][1]+points[l[1]][1])/2)))
+ #     midPoints.append((int((points[l[0]][0]+points[l[1]][0])/2),
+ #                      int((points[l[0]][1]+points[l[1]][1])/2)))
       
-    for line in lines:
+    for line in self.lines:
       c.begin_path()
-      c.move_to(points[line[0]][0],points[line[0]][1])
-      x = points[line[1]][0]
-      y = points[line[1]][1]
+      c.move_to(self.points[line[0]][0],self.points[line[0]][1])
+      x = self.points[line[1]][0]
+      y = self.points[line[1]][1]
       c.line_to(x,y)
       c.stroke_style = "rgba(255,0,0,1)"
       c.line_width = 3
@@ -67,7 +95,7 @@ class Canvas(CanvasTemplate):
       c.fill()
       c.stroke()    
 
-    for p in points:
+    for p in self.points:
       c.begin_path()
       c.arc(p[0],p[1], 20,
             0, 2*math.pi,True)
@@ -78,7 +106,7 @@ class Canvas(CanvasTemplate):
       c.fill()
       c.stroke()
       
-    for p in midPoints:
+    for p in self.midPoints:
       c.begin_path()
       c.arc(p[0],p[1], 5,
             0, 2*math.pi,True)
@@ -94,7 +122,13 @@ class Canvas(CanvasTemplate):
 
   def canvas_1_mouse_down(self, x, y, button, **event_args):
     """This method is called when a mouse button is pressed on this component"""
+    result
+    rint(self)
     print((x,y))
+    print("points")
+    print(self.points)
+    print("midPoints")
+    print(self.midPoints)
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
