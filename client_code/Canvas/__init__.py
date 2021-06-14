@@ -115,7 +115,7 @@ class Canvas(CanvasTemplate):
     print(x,y)
     c = self.canvas_1
     p = self.pointSelected(self.points, (x,y), 20)
-    q = self.pointSelected(self.midPoints,(x,y),5)
+    q = self.pointSelected(self.midPoints,(x,y),10)
     
     if p in self.points:
       print("buren punten")
