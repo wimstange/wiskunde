@@ -2,6 +2,7 @@ is_package: true
 container:
   type: HtmlTemplate
   properties: {html: '@theme:standard-page.html'}
+  event_bindings: {}
 components:
 - type: ColumnPanel
   properties: {col_widths: '{}'}
@@ -13,7 +14,7 @@ components:
       visible: true, spacing_above: small, spacing_below: small, background: '#dff68e'}
     name: canvas_1
     layout_properties: {grid_position: 'SSJMVV,RAXZLD'}
-    event_bindings: {show: canvas_1_show, reset: canvas_1_reset}
+    event_bindings: {show: canvas_1_show, reset: canvas_1_reset, mouse_down: canvas_1_mouse_down}
 - type: FlowPanel
   properties: {}
   name: navbar_links

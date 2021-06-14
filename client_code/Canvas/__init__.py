@@ -9,6 +9,16 @@ class Canvas(CanvasTemplate):
 
     # Any code you write here will run when the form opens.
    
+  def afstand(self,p,q):
+    return math.sqrt((p[0]-q[0])*(p[0]-q[0])+(p[1]-q[1])*(p[1]-q[1]))
+
+  def pointSelected(self,points, loc, distance):
+    result = None
+    for e in points:
+        if afstand(e,loc) < distance:
+            result = e
+    return result
+  
   def transform(self, points,multp,add):
     result = []
     for point in points:
@@ -77,12 +87,14 @@ class Canvas(CanvasTemplate):
       c.fill_style = "rgba(0,0,0,1)"
       c.fill()
       c.stroke()
-    
-
-    
-
+ 
   def canvas_1_reset(self, **event_args):
     """This method is called when the canvas is reset and cleared, such as when the window resizes, or the canvas is added to a form."""
     self.canvas_1_show()
+
+  def canvas_1_mouse_down(self, x, y, button, **event_args):
+    """This method is called when a mouse button is pressed on this component"""
+    print((x,y))
+
 
 
