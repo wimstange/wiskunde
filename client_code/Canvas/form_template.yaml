@@ -9,6 +9,39 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_2
+    layout_properties: {grid_position: 'XOJTBC,FFZWZR'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Computermuis, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#f0dbdb', bold: false, underline: false, icon: ''}
+    name: button_4
+    layout_properties: {grid_position: 'XOJTBC,DKLGQN'}
+    event_bindings: {click: button_4_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: computerkatten, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#f0dbdb', bold: false, underline: false, icon: ''}
+    name: button_5
+    layout_properties: {grid_position: 'XOJTBC,GMYBNX'}
+    event_bindings: {click: button_5_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: opnieuw, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '#f0dbdb',
+      bold: false, underline: false, icon: ''}
+    name: button_6
+    layout_properties: {grid_position: 'XOJTBC,OROYLZ'}
+    event_bindings: {click: button_6_click}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_1
+    layout_properties: {grid_position: 'XOJTBC,FHSUPN'}
+    event_bindings: {}
   - type: Canvas
     properties: {role: null, height: 778, tooltip: '', border: '', foreground: '',
       visible: true, spacing_above: small, spacing_below: small, background: '#dff68e'}
@@ -19,11 +52,16 @@ components:
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
+  components:
+  - type: Label
+    properties: {}
+    name: label_2
+    layout_properties: {}
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: Tekenen op het canvas, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: ''}
+    text: Kat en muis, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
   name: label_1
   layout_properties: {slot: title}
   event_bindings: {}

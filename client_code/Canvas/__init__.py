@@ -22,7 +22,7 @@ class Canvas(CanvasTemplate):
   def transform(self, points,multp,add):
     result = []
     for point in points:
-        result.append((multp*point[0]+add,multp*point[1]+add))
+        result.append((multp*point[0]+add+175,multp*point[1]+add))
     return result
   
   def canvas_1_show(self, **event_args):
@@ -95,6 +95,23 @@ class Canvas(CanvasTemplate):
   def canvas_1_mouse_down(self, x, y, button, **event_args):
     """This method is called when a mouse button is pressed on this component"""
     print((x,y))
+
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    print("muis speelt")
+    self.label_2.text = "De computer speelt muis"
+
+  def button_5_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    print("Katten spelen")
+    self.label_2.text = "De computer speelt katten"
+
+  def button_6_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    print("Opnieuw beginnen")
+
+
+
 
 
 
