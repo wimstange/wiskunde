@@ -106,12 +106,17 @@ class Canvas(CanvasTemplate):
       c.stroke()
       
     for p in self.midPoints:
+      if p in self.katPoints:
+        kleur = "rgba(255,0,0,1)"
+      else:
+        kleur = "rgba(0,0,0,1)"
+      
       c.begin_path()
       c.arc(p[0],p[1], 5,
             0, 2*math.pi,True)
-      c.stroke_style = "rgba(0,0,0,1)"
+      c.stroke_style = kleur
       c.line_width = 3
-      c.fill_style = "rgba(0,0,0,1)"
+      c.fill_style = kleur
       c.fill()
       c.stroke()
   
@@ -125,23 +130,19 @@ class Canvas(CanvasTemplate):
 
   def canvas_1_mouse_down(self, x, y, button, **event_args):
     """This method is called when a mouse button is pressed on this component"""
-    print(x,y)
+
     c = self.canvas_1
     p = self.pointSelected(self.points, (x,y), 20)
     q = self.pointSelected(self.midPoints,(x,y),10)
     
-    if self.muisBeurt:
+    if self.muisBeurt and not p == None:
       self.muisPoint = [p]
+      self.muisBeurt = not self.muisBeurt
 
-    if not self.muisBeurt:
+    if not self.muisBeurt and not q == None:
       self.katPoints.append(q)
+      self.muisBeurt = not self.muisBeurt
       
-    if p in self.points:
-      print("buren punten")
-      print(self.burenPoints(p))
-      print("buren mid punten")
-      print(self.burenMidPoints(p))
-    self.muisBeurt = not self.muisBeurt
     self.drawboard()
     
   def button_4_click(self, **event_args):
