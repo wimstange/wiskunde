@@ -13,7 +13,7 @@ class Canvas(CanvasTemplate):
     self.DISTANCE = 20 
 #    running = True
     self.muisBeurt = True
-    self.muisPoint = [(378,75)]
+    self.muisPoint = None
     self.katPoints = []
     self.katComputer = False
     self.muisComputer = False
@@ -45,6 +45,9 @@ class Canvas(CanvasTemplate):
   def afstand(self,p,q):
     return math.sqrt((p[0]-q[0])*(p[0]-q[0])+(p[1]-q[1])*(p[1]-q[1]))
 
+  def midden(self,p,q):
+    return (int((p[0]+q[0])/2),int((p[1]+q[1])/2))
+  
   def pointSelected(self,points, loc, distance):
     result = None
     for e in points:
@@ -91,7 +94,7 @@ class Canvas(CanvasTemplate):
       c.stroke()    
 
     for p in self.points:
-      if p in self.muisPoint:
+      if p == self.muisPoint:
         kleur = "rgba(255,255,255,1)"
       else:
         kleur = "rgba(0,0,255,1)"
@@ -136,12 +139,18 @@ class Canvas(CanvasTemplate):
     q = self.pointSelected(self.midPoints,(x,y),10)
     
     if self.muisBeurt and not p == None:
-      self.muisPoint = [p]
-      self.muisBeurt = not self.muisBeurt
+      old_p = self.muisPoint
+      if self.muisPoint == None or (p in self.points and p in self.burenPoints(self.muisPoint) and not self.midden(old_p,p) in self.katPoints):
+        self.muisPoint = p
+        if len(self.katPoints) == 19:
+          print("de muis wint")
+        self.muisBeurt = not self.muisBeurt
 
-    if not self.muisBeurt and not q == None:
+    if not self.muisBeurt and not q == None and not q in self.katPoints:
       self.katPoints.append(q)
-      self.muisBeurt = not self.muisBeurt
+      if self.burenMidPoints(self.muisPoint) in self.katPoints:
+        print("de katten winnen")
+      elf.muisBeurt = not self.muisBeurt
       
     self.drawboard()
     
@@ -158,6 +167,10 @@ class Canvas(CanvasTemplate):
   def button_6_click(self, **event_args):
     """This method is called when the button is clicked"""
     print("Opnieuw beginnen")
+    self.muisPoint = None
+    self.katPoints = []
+    self.muisBeurt = True
+    self.drawboard()
 
 
 
