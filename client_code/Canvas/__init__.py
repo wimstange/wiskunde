@@ -8,10 +8,16 @@ class Canvas(CanvasTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run when the form opens.
-    self.punten = [(200,150), (300,200)]
     self.MULTP = 64
     self.ADD = 75
     self.DISTANCE = 20 
+#    running = True
+    muisBeurt = True
+    muisPoint = []
+    katPoints = []
+    katComputer = False
+    muisComputer = False
+    
     self.pointsBase = [(2,0),(4,0),(6,0),
               (1,2),(3,2),(5,2),(7,2),
               (0,4),(2,4),(4,4),(6,4),(8,4),
@@ -69,8 +75,7 @@ class Canvas(CanvasTemplate):
             result.append(self.midden(point,p))
     return result
   
-  def canvas_1_show(self, **event_args):
-    """This method is called when the Canvas is shown on the screen"""
+  def drawboard(self):
     c = self.canvas_1
       
     for line in self.lines:
@@ -105,7 +110,11 @@ class Canvas(CanvasTemplate):
       c.fill_style = "rgba(0,0,0,1)"
       c.fill()
       c.stroke()
- 
+  
+  def canvas_1_show(self, **event_args):
+    """This method is called when the Canvas is shown on the screen"""
+    self.drawboard()
+    
   def canvas_1_reset(self, **event_args):
     """This method is called when the canvas is reset and cleared, such as when the window resizes, or the canvas is added to a form."""
     self.canvas_1_show()
