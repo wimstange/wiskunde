@@ -12,11 +12,11 @@ class Canvas(CanvasTemplate):
     self.ADD = 75
     self.DISTANCE = 20 
 #    running = True
-    muisBeurt = True
-    muisPoint = []
-    katPoints = []
-    katComputer = False
-    muisComputer = False
+    self.muisBeurt = True
+    self.muisPoint = [(378,75)]
+    self.katPoints = []
+    self.katComputer = False
+    self.muisComputer = False
     
     self.pointsBase = [(2,0),(4,0),(6,0),
               (1,2),(3,2),(5,2),(7,2),
@@ -77,7 +77,7 @@ class Canvas(CanvasTemplate):
   
   def drawboard(self):
     c = self.canvas_1
-      
+  
     for line in self.lines:
       c.begin_path()
       c.move_to(self.points[line[0]][0],self.points[line[0]][1])
@@ -91,12 +91,16 @@ class Canvas(CanvasTemplate):
       c.stroke()    
 
     for p in self.points:
+      if p in self.muisPoint:
+        kleur = "rgba(255,255,255,1)"
+      else:
+        kleur = "rgba(0,0,255,1)"
       c.begin_path()
       c.arc(p[0],p[1], 20,
             0, 2*math.pi,True)
-      c.stroke_style = "#2196F3"
+      c.stroke_style = kleur
       c.line_width = 3
-      c.fill_style = "rgba(0,0,255,1)"
+      c.fill_style = kleur
       c.close_path()
       c.fill()
       c.stroke()
@@ -126,32 +130,20 @@ class Canvas(CanvasTemplate):
     p = self.pointSelected(self.points, (x,y), 20)
     q = self.pointSelected(self.midPoints,(x,y),10)
     
+    if self.muisBeurt:
+      self.muisPoint = [p]
+
+    if not self.muisBeurt:
+      self.katPoints.append(q)
+      
     if p in self.points:
       print("buren punten")
       print(self.burenPoints(p))
       print("buren mid punten")
       print(self.burenMidPoints(p))
+    self.muisBeurt = not self.muisBeurt
+    self.drawboard()
     
-    if p in self.points:
-      c.begin_path()
-      c.arc(p[0],p[1], 20,
-          0, 2*math.pi,True)
-      c.stroke_style = "#2196F3"
-      c.line_width = 3
-      c.fill_style = "rgba(0,255,255,1)"
-      c.close_path()
-      c.fill()
-      c.stroke()
-    if q in self.midPoints:
-      c.begin_path()
-      c.arc(q[0],q[1], 5,
-            0, 2*math.pi,True)
-      c.stroke_style = "rgba(255,0,0,1)"
-      c.line_width = 3
-      c.fill_style = "rgba(255,0,0,1)"
-      c.fill()
-      c.stroke()      
-
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
     print("muis speelt")
