@@ -1,8 +1,8 @@
-from ._anvil_designer import CanvasTemplate
+from ._anvil_designer import Kat_en_muisTemplate
 from anvil import *
 import math
 
-class Canvas(CanvasTemplate):
+class Kat_en_muis(Kat_en_muisTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -142,15 +142,22 @@ class Canvas(CanvasTemplate):
       old_p = self.muisPoint
       if self.muisPoint == None or (p in self.points and p in self.burenPoints(self.muisPoint) and not self.midden(old_p,p) in self.katPoints):
         self.muisPoint = p
+        print(len(self.katPoints))
         if len(self.katPoints) == 19:
           print("de muis wint")
         self.muisBeurt = not self.muisBeurt
 
     if not self.muisBeurt and not q == None and not q in self.katPoints:
       self.katPoints.append(q)
-      if self.burenMidPoints(self.muisPoint) in self.katPoints:
+      buren = self.burenMidPoints(self.muisPoint)
+      if buren != []:
+        katWinst = True
+        for b in buren:
+          if b not in self.katPoints:
+            katWinst = False
+      if katWinst:
         print("de katten winnen")
-      elf.muisBeurt = not self.muisBeurt
+      self.muisBeurt = not self.muisBeurt
       
     self.drawboard()
     

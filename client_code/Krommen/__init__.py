@@ -4,7 +4,7 @@ from ..Spiraal_van_Archimedes import Spiraal_van_Archimedes
 from ..Hypocycloide import Hypocycloide
 from ..Lissajous import Lissajous
 from ..Cycloide import Cycloide
-from ..Canvas import Canvas
+from ..Kat_en_muis import Kat_en_muis
 
 class Krommen(KrommenTemplate):
   def __init__(self, **properties):
@@ -31,7 +31,7 @@ class Krommen(KrommenTemplate):
   def link_3_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
-    self.content_panel.add_component(Canvas())
+    self.content_panel.add_component(Kat_en_muis())
 
   def link_4_click(self, **event_args):
     """This method is called when the link is clicked"""
