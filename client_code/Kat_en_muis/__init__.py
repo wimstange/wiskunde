@@ -1,6 +1,7 @@
 from ._anvil_designer import Kat_en_muisTemplate
 from anvil import *
 import math
+import random
 
 class Kat_en_muis(Kat_en_muisTemplate):
   def __init__(self, **properties):
@@ -17,6 +18,8 @@ class Kat_en_muis(Kat_en_muisTemplate):
     self.katPoints = []
     self.katComputer = False
     self.muisComputer = False
+    self.katWinst = False
+    self.muisWinst = False
     
     self.pointsBase = [(2,0),(4,0),(6,0),
               (1,2),(3,2),(5,2),(7,2),
@@ -80,7 +83,7 @@ class Kat_en_muis(Kat_en_muisTemplate):
   
   def drawboard(self):
     c = self.canvas_1
-  
+    c.fill("rgba(223,246,142,1)")
     for line in self.lines:
       c.begin_path()
       c.move_to(self.points[line[0]][0],self.points[line[0]][1])
@@ -142,41 +145,78 @@ class Kat_en_muis(Kat_en_muisTemplate):
       old_p = self.muisPoint
       if self.muisPoint == None or (p in self.points and p in self.burenPoints(self.muisPoint) and not self.midden(old_p,p) in self.katPoints):
         self.muisPoint = p
-        print(len(self.katPoints))
-        if len(self.katPoints) == 19:
-          print("de muis wint")
         self.muisBeurt = not self.muisBeurt
 
     if not self.muisBeurt and not q == None and not q in self.katPoints:
       self.katPoints.append(q)
-      buren = self.burenMidPoints(self.muisPoint)
-      if buren != []:
-        katWinst = True
-        for b in buren:
-          if b not in self.katPoints:
-            katWinst = False
-      if katWinst:
-        print("de katten winnen")
       self.muisBeurt = not self.muisBeurt
+
+
+    self.drawboard()      
       
-    self.drawboard()
+    if len(self.katPoints) == 19:
+      muisWinst = True
+      c.clear_rect(100,250,575,75)
+      c.fill_style = 'rgba(255,255,255,1)'
+      c.fill_rect(100,250,575,75)
+
+      c.fill_style = "rgba(0,0,255,1)"
+      c.line_width = 2
+      c.font = '72px montserrat'
+      c.fill_text("De muis wint!!",100,300)
     
+    buren = self.burenMidPoints(self.muisPoint)
+    if buren != []:
+      katWinst = True
+      for b in buren:
+        if b not in self.katPoints:
+          katWinst = False
+      if katWinst:
+        c.clear_rect(100,250,575,75)
+        c.fill_style = 'rgba(255,255,255,1)'
+        c.fill_rect(100,250,575,75)
+        
+        c.fill_style = "rgba(255,0,0,1)"
+        c.line_width = 2
+        c.font = '72px montserrat'
+        c.fill_text("De katten winnen!!",100,300)
+        
+    if not katWinst and not muisWinst:
+      if self.muisBeurt == True and self.muisComputer == True:
+        print("Muis aan zet en door de computer")
+        print("Muispunt is nu:")
+        print(self.muisPoint)
+        self.muisPoint = random.choice(self.points)
+        print("de computer heeft gekozen:")
+        print(self.muisPoint)
+      if self.katBeurt == True and self.katComputer == True:
+        print("Katten aan zet en door de computer")
+        print("Katpunten zijn nu:")
+        print(self.katPoints)
+        self.katPoints.append(random.choice(self.midPoints))
+        print("de computer heeft gekozen:")
+        print(self.katPoints)
+        
+        
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
     print("muis speelt")
     self.label_2.text = "De computer speelt muis"
+    self.muisComputer = not self.muisComputer
+    
 
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
     print("Katten spelen")
     self.label_2.text = "De computer speelt katten"
+    self.katComputer = not self.katComputer
 
   def button_6_click(self, **event_args):
     """This method is called when the button is clicked"""
-    print("Opnieuw beginnen")
     self.muisPoint = None
     self.katPoints = []
     self.muisBeurt = True
+    self.background = "rgba(223,246,142,1)"
     self.drawboard()
 
 
