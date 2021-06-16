@@ -167,11 +167,11 @@ class Kat_en_muis(Kat_en_muisTemplate):
     
     buren = self.burenMidPoints(self.muisPoint)
     if buren != []:
-      katWinst = True
+      self.katWinst = True
       for b in buren:
         if b not in self.katPoints:
           katWinst = False
-      if katWinst:
+      if self.katWinst:
         c.clear_rect(100,250,575,75)
         c.fill_style = 'rgba(255,255,255,1)'
         c.fill_rect(100,250,575,75)
@@ -181,7 +181,7 @@ class Kat_en_muis(Kat_en_muisTemplate):
         c.font = '72px montserrat'
         c.fill_text("De katten winnen!!",100,300)
         
-    if not katWinst and not muisWinst:
+    if not self.katWinst and not self.muisWinst:
       if self.muisBeurt == True and self.muisComputer == True:
         print("Muis aan zet en door de computer")
         print("Muispunt is nu:")
@@ -200,14 +200,12 @@ class Kat_en_muis(Kat_en_muisTemplate):
         
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
-    print("muis speelt")
     self.label_2.text = "De computer speelt muis"
     self.muisComputer = not self.muisComputer
     
 
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
-    print("Katten spelen")
     self.label_2.text = "De computer speelt katten"
     self.katComputer = not self.katComputer
 
