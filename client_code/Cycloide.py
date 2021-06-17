@@ -3,13 +3,14 @@ from anvil import *
 import plotly.graph_objects as go
 import math
 
+
 class Cycloide(CycloideTemplate):
+  
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     r = 1
     self.plot_1.data = self.cycloide(r,10000)
-    
     # Any code you write here will run when the form opens.
 
   def button_1_click(self, **event_args):
