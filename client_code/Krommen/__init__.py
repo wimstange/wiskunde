@@ -5,6 +5,7 @@ from ..Hypocycloide import Hypocycloide
 from ..Lissajous import Lissajous
 from ..Cycloide import Cycloide
 from ..Kat_en_muis import Kat_en_muis
+from ..Boom_van_Pythagoras import Boom_van_Pythagoras
 
 class Krommen(KrommenTemplate):
   def __init__(self, **properties):
@@ -42,6 +43,11 @@ class Krommen(KrommenTemplate):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
     self.content_panel.add_component(Cycloide())
+
+  def link_6_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.content_panel.clear()
+    self.content_panel.add_component(Boom_van_Pythagoras())
 
 
 
