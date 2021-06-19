@@ -3,6 +3,7 @@ from anvil import *
 import plotly.graph_objects as go
 import random
 
+
 class Boom_van_Pythagoras(Boom_van_PythagorasTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -10,7 +11,7 @@ class Boom_van_Pythagoras(Boom_van_PythagorasTemplate):
 
     # Any code you write here will run when the form opens.
     
-    def transf(x,y):\
+    def transf(x,y):
       return a*x-b*y-1+a, b*x+a*y+b
 
     a, b, c, d = .5, .5, .5, -.5
