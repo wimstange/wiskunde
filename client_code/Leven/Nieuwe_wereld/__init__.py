@@ -1,7 +1,7 @@
-from ._anvil_designer import Form1Template
+from ._anvil_designer import Nieuwe_wereldTemplate
 from anvil import *
 
-class Form1(Form1Template):
+class Nieuwe_wereld(Nieuwe_wereldTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)

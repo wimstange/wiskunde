@@ -100,8 +100,16 @@ class Leven(LevenTemplate):
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
-
+      save_clicked = alert(
+      content=Nieuwe_wereld(),
+      title="Maak nieuwe wereld",
+      large=True,
+      buttons=[("Save",True),("Cancel",False)],
+    )
+    # If the alert returned 'True', the save button was clicked.
+    if save_clicked:
+      pass
+    
 
 
 
