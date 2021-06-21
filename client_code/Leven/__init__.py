@@ -6,18 +6,18 @@ class Leven(LevenTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
+    self.N = 80
     # Any code you write here will run when the form opens.
     
 
   def canvas_1_show(self, **event_args):
     """This method is called when the Canvas is shown on the screen"""
     c = self.canvas_1
-    N = 80
+#    N = 80
     wereld = []
-    for i in range(N):
+    for i in range(self.N):
         r = []
-        for j in range(N):
+        for j in range(self.N):
             t = random.random()
             if t<0.1:
               r.append(0)
@@ -25,8 +25,8 @@ class Leven(LevenTemplate):
               r.append(255)
         wereld.append(r)
          
-    for i in range(N):
-      for j in range(N):
+    for i in range(self.N):
+      for j in range(self.N):
         if wereld[i][j] == 255:
           kleur = "rgba(255,0,0,1)"
         else: 
