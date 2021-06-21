@@ -1,6 +1,7 @@
 from ._anvil_designer import LevenTemplate
 from anvil import *
 import random
+import math
 from ..Nieuwe_wereld import Nieuwe_wereld
 class Leven(LevenTemplate):
   def __init__(self, **properties):
@@ -9,6 +10,7 @@ class Leven(LevenTemplate):
     self.N = 80
     self.wereld = []
     # Any code you write here will run when the form opens.
+    
     self.randomWereld(self.N)
     
 #    for i in range(self.N):
@@ -70,7 +72,7 @@ class Leven(LevenTemplate):
     self.canvas_1.width = str(self.N*10)
     self.canvas_1.height = str(self.N*10)
     self.canvas_1.reset_context()
-    self.randomWereld(self.N)
+    ## self.randomWereld(self.N)
     self.timer_1.interval = 2
     self.canvas_1_show()
 
@@ -99,19 +101,23 @@ class Leven(LevenTemplate):
     self.canvas_1_show()
 
   def button_3_click(self, **event_args):
+    self.timer_1.interval = 0
+    self.wereld = []
+    for i in range(self.N):
+        r = []
+        for j in range(self.N):
+            r.append(0)
+        self.wereld.append(r)
+        
+        
 
-      save_clicked = alert(content=Nieuwe_wereld(),
-                           title="Maak nieuwe wereld",
-                           large=True,
-                           buttons=[("Stop en sla op",True),("Stop zonder opslaan",False)],
-                          )
-    # If the alert returned 'True', the save button was clicked.
-      if save_clicked:
-        print("De wereld is veranderd.")
+
     
 
-
-
-
+  def canvas_1_mouse_down(self, x, y, button, **event_args):
+    """This method is called when a mouse button is pressed on this component"""
+    
+    self.wereld[int(math.floor(x/10))][int(math.floor(y/10))] = 255
+    self.canvas_1_show()
 
 

@@ -54,7 +54,7 @@ components:
     visible: true, spacing_above: small, spacing_below: small, background: ''}
   name: canvas_1
   layout_properties: {grid_position: 'RUXXBO,HRATOQ'}
-  event_bindings: {show: canvas_1_show}
+  event_bindings: {show: canvas_1_show, mouse_down: canvas_1_mouse_down}
 - type: Timer
   properties: {interval: 3}
   name: timer_1
