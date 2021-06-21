@@ -103,7 +103,7 @@ class Leven(LevenTemplate):
       save_clicked = alert(content=Nieuwe_wereld(),
                            title="Maak nieuwe wereld",
                            large=True,
-                           buttons=[("Save",True),("Cancel",False)],
+                           buttons=[("Stop en sla op",True),("Stop zonder opslaan",False)],
                           )
     # If the alert returned 'True', the save button was clicked.
       if save_clicked:

@@ -1,6 +1,8 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: '#32c819'}
   event_bindings: {}
 components:
 - type: DataRowPanel
@@ -9,8 +11,11 @@ components:
   layout_properties: {grid_position: 'ILJQHZ,XWCRQA'}
   components: []
 - type: Canvas
-  properties: {height: 530}
+  properties: {role: null, height: 530, tooltip: '', border: '', foreground: '', visible: true,
+    spacing_above: small, spacing_below: small, background: '#32c819'}
   name: canvas_1
   layout_properties: {grid_position: 'IACYXO,JQIVRY'}
   event_bindings: {}
+  data_bindings:
+  - {property: height, code: 'self.item[''N'']'}
 is_package: true

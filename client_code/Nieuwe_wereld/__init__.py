@@ -7,3 +7,7 @@ class Nieuwe_wereld(Nieuwe_wereldTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run when the form opens.
+    c = self.canvas_1
+    # c.width = self.N
+    # c.height = self.N
+    c.reset_context()
