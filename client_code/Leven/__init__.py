@@ -1,7 +1,7 @@
 from ._anvil_designer import LevenTemplate
 from anvil import *
 import random
-import ..nie
+from ..Ni
 class Leven(LevenTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
