@@ -1,9 +1,10 @@
 services: []
-startup: {type: form, module: Form1}
+startup: {type: form, module: Leven}
 package_name: Krommen
 allow_embedding: true
 name: Krommen
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
 metadata: {}
+startup_form: Hypocycloide
 db_schema: []
 renamed: true
