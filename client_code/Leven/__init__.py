@@ -101,19 +101,22 @@ class Leven(LevenTemplate):
     self.canvas_1_show()
 
   def button_3_click(self, **event_args):
-    self.timer_1.interval = 0
+
     self.wereld = []
     for i in range(self.N):
         r = []
         for j in range(self.N):
             r.append(0)
         self.wereld.append(r)
-        
-        
-
-
+    
+    self.canvas_1.width = str(self.N*10)
+    self.canvas_1.height = str(self.N*10)
+    self.canvas_1.reset_context()
+    self.timer_1.interval = 0
+    self.canvas_1_show()
     
 
+        
   def canvas_1_mouse_down(self, x, y, button, **event_args):
     """This method is called when a mouse button is pressed on this component"""
     
