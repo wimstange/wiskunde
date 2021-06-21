@@ -1,0 +1,16 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+  event_bindings: {}
+components:
+- type: DataRowPanel
+  properties: {}
+  name: data_row_panel_1
+  layout_properties: {grid_position: 'ILJQHZ,XWCRQA'}
+  components: []
+- type: Canvas
+  properties: {height: 530}
+  name: canvas_1
+  layout_properties: {grid_position: 'IACYXO,JQIVRY'}
+  event_bindings: {}
+is_package: true
