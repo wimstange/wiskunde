@@ -9,16 +9,33 @@ class Leven(LevenTemplate):
     self.N = 80
     self.wereld = []
     # Any code you write here will run when the form opens.
+    self.maakWereld(self.N)
+    
+#    for i in range(self.N):
+#        r = []
+#        for j in range(self.N):
+#            t = random.random()
+#            if t<0.2:
+#              r.append(0)
+#            else:
+#              r.append(255)
+#        self.wereld.append(r)
+    
+  def maakWereld(self, N):
+    self.wereld = []
+ 
     for i in range(self.N):
         r = []
         for j in range(self.N):
             t = random.random()
-            if t<0.1:
+            if t<0.2:
               r.append(0)
             else:
               r.append(255)
         self.wereld.append(r)
 
+  
+  
   def canvas_1_show(self, **event_args):
     """This method is called when the Canvas is shown on the screen"""
     c = self.canvas_1
@@ -50,10 +67,10 @@ class Leven(LevenTemplate):
     for i in range(self.N):
         for j in range(self.N):
             waarde = int((self.wereld[i][(j-1)%self.N]+self.wereld[i][(j+1)%self.N]+self.wereld[(i-1)%self.N][j]+
-                          self.wereld[(i+1)%self.N][j]+self.wereld[(i-1)%self.N][(j-1)%self.N]+self.wereld[(i-1)%self.N][(j+1)%self.N]+
+                          self.wereld[(i+1)%self.N][j]+self.wereld[i-1][(j-1)%self.N]+self.wereld[(i-1)%self.N][(j+1)%self.N]+
                           self.wereld[(i+1)%self.N][(j-1)%self.N]+self.wereld[(i+1)%self.N][(j+1)%self.N])/255)
             if self.wereld[i][j] == 255:
-                if waarde <2 or waarde > 3:
+                if waarde < 2 or waarde > 3:
                     nieuweWereld[i][j] = 0
             else:
                 if waarde == 3:
@@ -62,5 +79,21 @@ class Leven(LevenTemplate):
     self.wereld = nieuweWereld
     self.canvas_1_show()
     
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    
+    self.canvas_1.width = str(self.N*10)
+    self.canvas_1.height = str(self.N*10)
+    self.canvas_1.reset_context()
+    self.maakWereld(self.N)
+    self.canvas_1_show()
+
+  def text_box_1_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    
+    self.N = int(self.text_box_1.text)
+
+
 
 
