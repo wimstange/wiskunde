@@ -9,7 +9,7 @@ class Leven(LevenTemplate):
     self.N = 80
     self.wereld = []
     # Any code you write here will run when the form opens.
-    self.maakWereld(self.N)
+    self.randomWereld(self.N)
     
 #    for i in range(self.N):
 #        r = []
@@ -21,7 +21,7 @@ class Leven(LevenTemplate):
 #              r.append(255)
 #        self.wereld.append(r)
     
-  def maakWereld(self, N):
+  def randomWereld(self, N):
     self.wereld = []
  
     for i in range(self.N):
@@ -62,7 +62,25 @@ class Leven(LevenTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
+    self.timer_1.interval=0
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
     
+    self.canvas_1.width = str(self.N*10)
+    self.canvas_1.height = str(self.N*10)
+    self.canvas_1.reset_context()
+    self.randomWereld(self.N)
+    self.timer_1.interval = 2
+    self.canvas_1_show()
+
+  def text_box_1_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    
+    self.N = int(self.text_box_1.text)
+
+  def timer_1_tick(self, **event_args):
+    """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
     nieuweWereld = self.wereld.copy()
     for i in range(self.N):
         for j in range(self.N):
@@ -79,21 +97,13 @@ class Leven(LevenTemplate):
                     
     self.wereld[:] = nieuweWereld[:]
     self.canvas_1_show()
-    
 
-  def button_2_click(self, **event_args):
+  def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
-    
-    self.canvas_1.width = str(self.N*10)
-    self.canvas_1.height = str(self.N*10)
-    self.canvas_1.reset_context()
-    self.maakWereld(self.N)
-    self.canvas_1_show()
+    pass
 
-  def text_box_1_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
-    
-    self.N = int(self.text_box_1.text)
+
+
 
 
 
