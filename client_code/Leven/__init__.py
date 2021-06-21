@@ -29,9 +29,9 @@ class Leven(LevenTemplate):
         for j in range(self.N):
             t = random.random()
             if t<0.2:
-              r.append(0)
-            else:
               r.append(255)
+            else:
+              r.append(0)
         self.wereld.append(r)
 
   
@@ -42,7 +42,7 @@ class Leven(LevenTemplate):
          
     for i in range(self.N):
       for j in range(self.N):
-        if self.wereld[i][j] == 0:
+        if self.wereld[i][j] == 255:
           kleur = "rgba(255,0,0,1)"
         else: 
           kleur = "rgba(50,200,25,1)"
@@ -66,8 +66,9 @@ class Leven(LevenTemplate):
     nieuweWereld = self.wereld.copy()
     for i in range(self.N):
         for j in range(self.N):
-            waarde = int((self.wereld[i][(j-1)%self.N]+self.wereld[i][(j+1)%self.N]+self.wereld[(i-1)%self.N][j]+
-                          self.wereld[(i+1)%self.N][j]+self.wereld[i-1][(j-1)%self.N]+self.wereld[(i-1)%self.N][(j+1)%self.N]+
+            waarde = int((self.wereld[i][(j-1)%self.N]+self.wereld[i][(j+1)%self.N]+
+                          self.wereld[(i-1)%self.N][j]+self.wereld[(i+1)%self.N][j]+
+                          self.wereld[i-1][(j-1)%self.N]+self.wereld[(i-1)%self.N][(j+1)%self.N]+
                           self.wereld[(i+1)%self.N][(j-1)%self.N]+self.wereld[(i+1)%self.N][(j+1)%self.N])/255)
             if self.wereld[i][j] == 255:
                 if waarde < 2 or waarde > 3:
@@ -76,7 +77,7 @@ class Leven(LevenTemplate):
                 if waarde == 3:
                     nieuweWereld[i][j] = 255
                     
-    self.wereld = nieuweWereld
+    self.wereld[:] = nieuweWereld[:]
     self.canvas_1_show()
     
 
