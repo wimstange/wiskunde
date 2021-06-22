@@ -30,9 +30,9 @@ components:
       foreground: '', visible: true, text: wereld maken, font_size: null, font: '',
       spacing_above: small, icon_align: left, spacing_below: small, italic: false,
       background: '', bold: false, underline: false, icon: ''}
-    name: nieuwe_wereld_button
+    name: button_3
     layout_properties: {}
-    event_bindings: {click: nieuwe_wereld_button}
+    event_bindings: {click: button_3_click}
 - type: FlowPanel
   properties: {}
   name: flow_panel_2

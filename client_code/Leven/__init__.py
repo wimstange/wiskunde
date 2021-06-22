@@ -105,7 +105,7 @@ class Leven(LevenTemplate):
     self.canvas_1_show()
 
   def button_3_click(self, **event_args):
-
+    
     self.wereld = []
     for i in range(self.N):
         r = []
@@ -127,9 +127,6 @@ class Leven(LevenTemplate):
     self.wereld[int(math.floor(x/10))][int(math.floor(y/10))] = 255
     self.canvas_1_show()
 
-  def nieuwe_wereld_button(self, **event_args):
-    """This method is called when the button is clicked"""
-    pass
 
 
 

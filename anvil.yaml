@@ -1,5 +1,5 @@
 services: []
-startup: {type: form, module: Nieuwe_wereld}
+startup: {type: form, module: Krommen}
 package_name: Krommen
 allow_embedding: true
 name: Krommen
