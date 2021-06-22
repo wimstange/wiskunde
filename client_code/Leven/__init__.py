@@ -2,7 +2,7 @@ from ._anvil_designer import LevenTemplate
 from anvil import *
 import random
 import math
-from ..Nieuwe_wereld import Nieuwe_wereld
+# from ..Nieuwe_wereld import Nieuwe_wereld
 class Leven(LevenTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -80,6 +80,8 @@ class Leven(LevenTemplate):
     """This method is called when the user presses Enter in this text box"""
     
     self.N = int(self.text_box_1.text)
+    self,wereld = []
+    
 
   def timer_1_tick(self, **event_args):
     """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
