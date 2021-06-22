@@ -8,6 +8,6 @@ class Nieuwe_wereld(Nieuwe_wereldTemplate):
 
     # Any code you write here will run when the form opens.
     c = self.canvas_1
-    c.width = self.parent.N
-    c.height = self.parent.N
-    c.reset_context()
+    #c.width = self.parent.N
+    #c.height = self.parent.N
+    #c.reset_context()

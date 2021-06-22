@@ -2,6 +2,8 @@ from ._anvil_designer import LevenTemplate
 from anvil import *
 import random
 import math
+from ..Nieuwe_wereld import Nieuwe_wereld
+
 # from ..Nieuwe_wereld import Nieuwe_wereld
 class Leven(LevenTemplate):
   def __init__(self, **properties):
@@ -124,5 +126,10 @@ class Leven(LevenTemplate):
     
     self.wereld[int(math.floor(x/10))][int(math.floor(y/10))] = 255
     self.canvas_1_show()
+
+  def nieuwe_wereld_button(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+
 
 
