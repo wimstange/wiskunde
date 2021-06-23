@@ -1,6 +1,7 @@
 from ._anvil_designer import Form1Template
 from anvil import *
 from ..Form1_detail import Form1_detail
+from Pillow import Image
 
 class Form1(Form1Template):
   def __init__(self, **properties):
