@@ -19,6 +19,7 @@ components:
     properties: {}
     name: text_box_1
     layout_properties: {}
+    event_bindings: {}
   - type: Button
     properties: {role: primary-color, align: right, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: 'Nieuw
