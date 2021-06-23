@@ -8,7 +8,7 @@ class Form1(Form1Template):
     self.init_components(**properties)
 
     # Any code you write here will run when the form opens.
-
+    print(self.item)
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     item_copy = dict(list(self.item))

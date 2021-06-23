@@ -2,6 +2,13 @@ container:
   type: ColumnPanel
   properties: {col_widths: '{}'}
 components:
+- type: Label
+  properties: {}
+  name: label_1
+  layout_properties: {grid_position: 'RIZAEH,SPZTGD'}
+  data_bindings:
+  - {property: text, code: 'self.item[''dimensie'']'}
+  event_bindings: {}
 - type: Canvas
   properties: {role: null, height: 310, tooltip: '', border: '', foreground: '', visible: true,
     spacing_above: small, spacing_below: small, background: '#69e746'}
