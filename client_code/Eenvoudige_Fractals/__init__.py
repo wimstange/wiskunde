@@ -57,7 +57,7 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
             c.close_path()
   
             c.stroke_style = kleur
-            c.line_width = 3
+            c.line_width = 1
             c.fill_style = kleur
   
             c.fill()
