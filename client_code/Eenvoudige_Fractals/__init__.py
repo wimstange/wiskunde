@@ -12,8 +12,12 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
     self.axioma = "F+F+F+F"
     self.schema = "FF+F+F+F+FF"
     self.lengte = 25
-    self.hoek = 60
+    self.hoek_gr = 60
+    self.hoek = self.hoek_gr/180 * m.pi
     self.iteraties = 8
+    self.productie = self.productie(self.axioma,self.schema,self.iteraties)
+    
+    c = self.canvas_1
 
   def volgende(self, woord, schema):
     for c in woord:
@@ -31,26 +35,32 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
     richting = 0
     x = x
     y = y
-    for c in voorschrift:
-        if c == "F":
-            x_n, y_n = x+lengte*m.cos(richting),y+lengte*m.sin(richting)
-            p.draw.line(screen, kleur, (x,y), (x_n, y_n),3)
+    for k in voorschrift:
+        x_n, y_n = x+lengte*m.cos(richting),y+lengte*m.sin(richting)
+        if k == "F":
+            c.begin_path()
+            c.line_to(x_n, y_n)
+            c.close_path()
+  
+            c.stroke_style = kleur
+            c.line_width = 3
+            c.fill_style = kleur
+  
+            c.fill()
+            c.stroke()
+
             x, y = x_n, y_n
-        elif c == "f":
-            x+lengte,y+lengte
-        elif c == "+":
+        elif k == "f":
+            x, y = x_n, y_n
+        elif k == "+":
             richting += hoek
-        elif c == "-":
+        elif k == "-":
             richting -= hoek
     
-
-
-
 # Definieer kleuren
 
-zwart    = (   0,   0,   0)
-wit      = ( 255, 255, 255)
-groen    = (   0, 255,   0)
-rood     = ( 255,   0,   0)
-
-    
+  zwart    = (   0,   0,   0)
+  wit      = ( 255, 255, 255)
+  groen    = (   0, 255,   0)
+  rood     = ( 255,   0,   0)
+  teken(150,150,self.voorschrift, zwart)

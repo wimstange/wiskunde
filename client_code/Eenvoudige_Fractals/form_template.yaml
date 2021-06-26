@@ -116,7 +116,7 @@ components:
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: 'theme:White', bold: false, underline: false}
-    name: hoek
+    name: hoek_gr
     layout_properties: {}
 - type: Spacer
   properties: {height: 32}
