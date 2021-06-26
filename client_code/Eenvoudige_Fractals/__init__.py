@@ -11,22 +11,26 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
     # Any code you write here will run when the form opens.
     axioma = self.axioma.text
     schema = self.schema.text
+    schema2 = self.schema2.text
     hoek_gr = int(self.hoek_gr.text)
     hoek = float(hoek_gr)/180 * m.pi
     iteraties = int(self.iteraties.text)
     lengte = float(self.lengte.text)
-    self.voorschrift = self.productie(axioma,schema,iteraties)
+    self.voorschrift = self.productie(axioma,schema,schema2, iteraties)
     
-  def volgende(self, woord, schema):
+  def volgende(self, woord, schema, schema2):
     for c in woord:
       if c not in {"F", "f", "+", "-"}:
             alert("ongeldige string")
-    return woord.replace("F", schema)
+      result = woord.replace("F", schema)
+      if not schema2 == "":
+        result = result.replace("f", schema2)
+    return result
 
-  def productie(self, woord, schema, iteraties):
+  def productie(self, woord, schema, schema2,iteraties):
     resultaat = woord
     for i in range(iteraties):
-        resultaat = self.volgende(resultaat,schema)
+        resultaat = self.volgende(resultaat,schema, schema2)
     return resultaat
         
   def canvas_1_show(self, **event_args):
@@ -85,7 +89,7 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
     if 4 < int(self.iteraties.text) or int(self.iteraties.text) <1:
       antwoord = alert("De iteratiewaarde mag hoogstens 4 zijn.")
       self.iteraties.text = "4"             
-    self.voorschrift = self.productie(self.axioma.text,self.schema.text,int(self.iteraties.text))
+    self.voorschrift = self.productie(self.axioma.text,self.schema.text,self.schema2.text,int(self.iteraties.text))
     self.canvas_1.reset_context()
     self.canvas_1_show()
 
@@ -97,8 +101,8 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
       self.schema.text = "F-F+F+FF-F-F+F"
       self.iteraties.text = 3
       self.lengte.text = 10
-      self.start_x.text = 50
-      self.start_y.text = 100
+      self.start_x.text = 100
+      self.start_y.text = 400
     elif self.soort.selected_value == "sneeuwvlok van Von Koch":
       self.hoek_gr.text = 60
       self.axioma.text = "F+F+F+F+F+F"
@@ -128,9 +132,9 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
       self.axioma.text = "F+F+F+F"
       self.schema.text = "FF+F+F+F+FF"
       self.iteraties.text = 3
-      self.lengte.text = 10
+      self.lengte.text = 25
       self.start_x.text = 100
-      self.start_y.text = 0
+      self.start_y.text = 50
     elif self.soort.selected_value == "Kwadratische variant Von Koch lijn":
       self.hoek_gr.text = 90
       self.axioma.text = "F"
@@ -140,15 +144,23 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
       self.start_x.text = 100
       self.start_y.text = 200
     elif self.soort.selected_value == "Archipel van Mandelbrot":
-      antwoord = alert("Dit is nog niet geimplementeerd")
-#      self.hoek_gr.text = 90
-#      self.axioma.text = "F+F+F+F"
-#      self.schema.text = "F+F--F+F"
-#      self.iteraties.text = 4
-#      self.lengte.text = 5
-#      self.start_x.text = 300
-#      self.start_y.text = 50      
-      
+#      antwoord = alert("Dit is nog niet geimplementeerd")
+      self.hoek_gr.text = 90
+      self.axioma.text = "F+F+F+F"
+      self.schema.text = "F-f+FF-F-FF-Ff-FF+f-FF+F+FF+Ff+FF"
+      self.schema2.text = "ffffff"
+      self.iteraties.text = 3
+      self.lengte.text = 5
+      self.start_x.text = 300
+      self.start_y.text = 50      
+    self.voorschrift = self.productie(self.axioma.text,self.schema.text,self.schema2.text,int(self.iteraties.text))
+    self.canvas_1.reset_context()
+    self.canvas_1_show()  
+
+  def canvas_1_reset(self, **event_args):
+    """This method is called when the canvas is reset and cleared, such as when the window resizes, or the canvas is added to a form."""
+    self.canvas_1_show()
+
 
 
 

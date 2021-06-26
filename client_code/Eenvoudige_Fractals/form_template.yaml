@@ -10,7 +10,7 @@ components:
     visible: true, spacing_above: small, spacing_below: small, background: '#e1e1e1'}
   name: canvas_1
   layout_properties: {grid_position: 'QRHQIN,HNIAVI'}
-  event_bindings: {show: canvas_1_show}
+  event_bindings: {show: canvas_1_show, reset: canvas_1_reset}
 - type: FlowPanel
   properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
     foreground: '', visible: true, spacing_above: small, spacing_below: small, background: 'theme:Primary
@@ -92,6 +92,13 @@ components:
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: 'theme:White', bold: false, underline: false}
     name: schema
+    layout_properties: {width: 176}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: 'theme:White', bold: false, underline: false}
+    name: schema2
     layout_properties: {}
 - type: FlowPanel
   properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
