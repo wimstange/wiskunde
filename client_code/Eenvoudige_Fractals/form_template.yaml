@@ -26,6 +26,36 @@ components:
     name: label_1
     layout_properties: {}
     event_bindings: {}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_2
+    layout_properties: {width: 204}
+  - type: DropDown
+    properties:
+      role: null
+      align: center
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [volgens parameters, sneeuwvlok van Von Koch, lijn van Minkowski, Vierkant Minkowski eiland,
+        Variant Minkowski lijn, Vierkant van Sierpinski, Kwadratische variant Von Koch lijn,
+        Archipel van Mandelbrot]
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: theme:White
+      bold: false
+      underline: false
+      include_placeholder: false
+    name: soort
+    layout_properties: {}
+    event_bindings: {change: soort_change}
+  event_bindings: {}
 - type: FlowPanel
   properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
     foreground: '', visible: true, spacing_above: small, spacing_below: small, background: 'theme:Primary
@@ -42,11 +72,11 @@ components:
     layout_properties: {}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: F+F+F+F, font_size: null,
-      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: 'theme:White', bold: false, underline: false}
+      border: '', enabled: true, foreground: '', visible: true, text: F+F+F+F+F+F,
+      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+      italic: false, background: 'theme:White', bold: false, underline: false}
     name: axioma
-    layout_properties: {}
+    layout_properties: {width: 187.182}
     event_bindings: {pressed_enter: axioma_pressed_enter}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:White',
@@ -58,9 +88,9 @@ components:
     event_bindings: {}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: F-F+F+FF-F-F+F,
-      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
-      italic: false, background: 'theme:White', bold: false, underline: false}
+      border: '', enabled: true, foreground: '', visible: true, text: F+F--F+F, font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: 'theme:White', bold: false, underline: false}
     name: schema
     layout_properties: {}
 - type: FlowPanel
@@ -78,11 +108,48 @@ components:
     name: label_4
     layout_properties: {}
   - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: '',
       border: '', enabled: true, foreground: '', visible: true, text: '4', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: 'theme:White', bold: false, underline: false}
     name: iteraties
+    layout_properties: {width: 44.18199999999999}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:White',
+      visible: true, text: startpunt (, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_7
+    layout_properties: {}
+  - type: TextBox
+    properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '300', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: 'theme:White', bold: false, underline: false}
+    name: start_x
+    layout_properties: {width: 52}
+    event_bindings: {}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:White',
+      visible: true, text: ' , ', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_8
+    layout_properties: {}
+  - type: TextBox
+    properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '150', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: 'theme:White', bold: false, underline: false}
+    name: start_y
+    layout_properties: {width: 51}
+    event_bindings: {}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:White',
+      visible: true, text: ' )', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_9
     layout_properties: {}
 - type: FlowPanel
   properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
@@ -99,12 +166,12 @@ components:
     name: label_5
     layout_properties: {grid_position: 'MXTAZS,VHZEJD'}
   - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: '25', font_size: null,
+    properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '4', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: 'theme:White', bold: false, underline: false}
     name: lengte
-    layout_properties: {grid_position: 'MXTAZS,WBWDRA'}
+    layout_properties: {grid_position: 'MXTAZS,WBWDRA', width: 47.18199999999999}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:White',
       visible: true, text: Hoek, font_size: null, font: '', spacing_above: small,
@@ -113,12 +180,12 @@ components:
     name: label_6
     layout_properties: {}
   - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: '90', font_size: null,
+    properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: '60', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: 'theme:White', bold: false, underline: false}
     name: hoek_gr
-    layout_properties: {}
+    layout_properties: {width: 30.181999999999988}
   - type: Button
     properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: Teken fractal, font_size: null, font: '',
@@ -132,6 +199,7 @@ components:
   properties: {}
   name: flow_panel_3
   layout_properties: {grid_position: 'UVFHID,MSHHQS'}
+  event_bindings: {}
 - type: Spacer
   properties: {height: 32}
   name: spacer_1

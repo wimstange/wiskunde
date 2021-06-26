@@ -43,8 +43,8 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
 #   lengte =3
 #    hoek_gr = int(self.hoek_gr.text)
 #    hoek = float(hoek_gr)/180 * m.pi
-    x = 300
-    y = 300
+    x = self.start_x.text
+    y = self.start_y.text
     kleur = rood
 
         
@@ -82,12 +82,73 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
 
   def button_1_click(self, **event_args):
     """Deze methode wordt uitgevoerd als op de button 'teken fractal' wordt geklikt"""
-    if 5 < int(self.iteraties.text) or int(self.iteraties.text) <1:
-      alert("Kies een iteratiewaarde tussen 1 en 6")
-                   
+    if 4 < int(self.iteraties.text) or int(self.iteraties.text) <1:
+      antwoord = alert("De iteratiewaarde mag hoogstens 4 zijn.")
+      self.iteraties.text = "4"             
     self.voorschrift = self.productie(self.axioma.text,self.schema.text,int(self.iteraties.text))
     self.canvas_1.reset_context()
     self.canvas_1_show()
+
+  def soort_change(self, **event_args):
+    """This method is called when an item is selected"""
+    if self.soort.selected_value == "lijn van Minkowski":
+      self.hoek_gr.text = 90
+      self.axioma.text = "F"
+      self.schema.text = "F-F+F+FF-F-F+F"
+      self.iteraties.text = 3
+      self.lengte.text = 10
+      self.start_x.text = 50
+      self.start_y.text = 100
+    elif self.soort.selected_value == "sneeuwvlok van Von Koch":
+      self.hoek_gr.text = 60
+      self.axioma.text = "F+F+F+F+F+F"
+      self.schema.text = "F+F--F+F"
+      self.iteraties.text = 4
+      self.lengte.text = 5
+      self.start_x.text = 300
+      self.start_y.text = 50
+    elif self.soort.selected_value == "Vierkant Minkowski eiland":
+      self.hoek_gr.text = 90
+      self.axioma.text = "F+F+F+F"
+      self.schema.text = "F-F+F+FF-F-F+F"
+      self.iteraties.text = 3
+      self.lengte.text = 5
+      self.start_x.text = 300
+      self.start_y.text = 200
+    elif self.soort.selected_value == "Variant Minkowski lijn":
+      self.hoek_gr.text = 90
+      self.axioma.text = "+F"
+      self.schema.text = "F+F-F-FFF+F+F-F"
+      self.iteraties.text = 3
+      self.lengte.text = 5
+      self.start_x.text = 300
+      self.start_y.text = 200
+    elif self.soort.selected_value == "Vierkant van Sierpinski":
+      self.hoek_gr.text = 90
+      self.axioma.text = "F+F+F+F"
+      self.schema.text = "FF+F+F+F+FF"
+      self.iteraties.text = 3
+      self.lengte.text = 10
+      self.start_x.text = 100
+      self.start_y.text = 0
+    elif self.soort.selected_value == "Kwadratische variant Von Koch lijn":
+      self.hoek_gr.text = 90
+      self.axioma.text = "F"
+      self.schema.text = "F+F-F-F+F"
+      self.iteraties.text = 4
+      self.lengte.text = 10
+      self.start_x.text = 100
+      self.start_y.text = 200
+    elif self.soort.selected_value == "Archipel van Mandelbrot":
+      antwoord = alert("Dit is nog niet geimplementeerd")
+#      self.hoek_gr.text = 90
+#      self.axioma.text = "F+F+F+F"
+#      self.schema.text = "F+F--F+F"
+#      self.iteraties.text = 4
+#      self.lengte.text = 5
+#      self.start_x.text = 300
+#      self.start_y.text = 50      
+      
 
 
 
