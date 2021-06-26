@@ -1,4 +1,4 @@
-from ._anvil_designer import KrommenTemplate
+from ._anvil_designer import WiskundeTemplate
 from anvil import *
 from ..Spiraal_van_Archimedes import Spiraal_van_Archimedes
 from ..Hypocycloide import Hypocycloide
@@ -8,7 +8,7 @@ from ..Kat_en_muis import Kat_en_muis
 from ..Boom_van_Pythagoras import Boom_van_Pythagoras
 from ..Leven import Leven
 
-class Krommen(KrommenTemplate):
+class Wiskunde(WiskundeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)

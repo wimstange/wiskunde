@@ -1,9 +1,10 @@
 services: []
-startup: {type: form, module: Krommen}
-package_name: Krommen
+startup: {type: form, module: Wiskunde}
+package_name: Wiskunde
 allow_embedding: true
-name: Krommen
+name: Wiskunde
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
 metadata: {}
+startup_form: Nieuwe_wereld
 db_schema: []
 renamed: true

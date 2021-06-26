@@ -1,7 +1,7 @@
-from ._anvil_designer import Form1_detailTemplate
+from ._anvil_designer import Eenvoudige_FractalsTemplate
 from anvil import *
 
-class Form1_detail(Form1_detailTemplate, item=new_items):
+class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
