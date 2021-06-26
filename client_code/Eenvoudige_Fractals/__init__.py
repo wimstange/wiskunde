@@ -36,7 +36,7 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
     zwart    = "rgba(   0,   0,   0)"
     wit      = "rgba( 255, 255, 255)"
     groen    = "rgba(   0, 255,   0)"
-    rood     = "rgba(( 255,   0,   0)"
+    rood     = "rgba(255,   0,   0)"
     
     c = self.canvas_1
     richting = 0
