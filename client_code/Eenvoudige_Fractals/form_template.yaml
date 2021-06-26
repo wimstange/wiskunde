@@ -9,14 +9,14 @@ components:
   properties: {role: null, height: '800', tooltip: '', border: '', foreground: '',
     visible: true, spacing_above: small, spacing_below: small, background: '#e1e1e1'}
   name: canvas_1
-  layout_properties: {grid_position: 'XWKANV,BTDJDD'}
+  layout_properties: {grid_position: 'QRHQIN,HNIAVI'}
   event_bindings: {show: canvas_1_show}
 - type: FlowPanel
   properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
     foreground: '', visible: true, spacing_above: small, spacing_below: small, background: 'theme:Primary
       500'}
   name: flow_panel_1
-  layout_properties: {grid_position: 'XWKANV,HULCJP NNUNHO,TTUNKN'}
+  layout_properties: {grid_position: 'NNUNHO,TTUNKN'}
   components:
   - type: Label
     properties: {role: headline, align: left, tooltip: '', border: '', foreground: 'theme:White',
@@ -31,7 +31,7 @@ components:
     foreground: '', visible: true, spacing_above: small, spacing_below: small, background: 'theme:Primary
       500'}
   name: flow_panel_2
-  layout_properties: {grid_position: 'XWKANV,HULCJP PHNJXO,IEQQEH'}
+  layout_properties: {grid_position: 'PHNJXO,IEQQEH'}
   components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:White',
@@ -55,9 +55,10 @@ components:
       underline: false, icon: ''}
     name: label_3
     layout_properties: {grid_position: 'HYVLQD,LSPDPY'}
+    event_bindings: {}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: FF+F+F+F+FF,
+      border: '', enabled: true, foreground: '', visible: true, text: F-F+F+FF-F-F+F,
       font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
       italic: false, background: 'theme:White', bold: false, underline: false}
     name: schema
@@ -67,7 +68,7 @@ components:
     foreground: '', visible: true, spacing_above: small, spacing_below: small, background: 'theme:Primary
       500'}
   name: flow_panel_4
-  layout_properties: {grid_position: 'XWKANV,HULCJP UFMBIF,DWCCCP'}
+  layout_properties: {grid_position: 'UFMBIF,DWCCCP'}
   components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:White',
@@ -88,7 +89,7 @@ components:
     foreground: '', visible: true, spacing_above: small, spacing_below: small, background: 'theme:Primary
       500'}
   name: flow_panel_5
-  layout_properties: {grid_position: 'XWKANV,HULCJP MXTAZS,BEWGQJ'}
+  layout_properties: {grid_position: 'MXTAZS,BEWGQJ'}
   components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:White',
@@ -118,8 +119,22 @@ components:
       background: 'theme:White', bold: false, underline: false}
     name: hoek_gr
     layout_properties: {}
+  - type: Button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Teken fractal, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {}
+    event_bindings: {click: button_1_click}
+  event_bindings: {}
+- type: FlowPanel
+  properties: {}
+  name: flow_panel_3
+  layout_properties: {grid_position: 'UVFHID,MSHHQS'}
 - type: Spacer
   properties: {height: 32}
   name: spacer_1
-  layout_properties: {grid_position: 'XWKANV,HULCJP LFTBHW,CSADAF'}
+  layout_properties: {grid_position: 'LFTBHW,CSADAF'}
+  event_bindings: {}
 is_package: true

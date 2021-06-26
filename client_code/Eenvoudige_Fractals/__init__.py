@@ -40,7 +40,7 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
     
     c = self.canvas_1
     richting = 0
-    lengte = 10
+    lengte =3
     hoek_gr = int(self.hoek_gr.text)
     hoek = float(hoek_gr)/180 * m.pi
     x = 0
@@ -79,5 +79,12 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
     print(self.voorschrift)
 #    self.canvas_1.reset_context
     self.canvas_1_show
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    
+    self.canvas_1.reset_context()
+    self.canvas_1_show()
+
 
 
