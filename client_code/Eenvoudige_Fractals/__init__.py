@@ -83,7 +83,9 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
     y = 150
     kleur = zwart
     print(self.voorschrift)
+        
     for k in self.voorschrift:
+        print(k, lengte, richting, hoek)
         x_n, y_n = x+lengte*m.cos(richting),y+lengte*m.sin(richting)
         if k == "F":
             c.begin_path()
