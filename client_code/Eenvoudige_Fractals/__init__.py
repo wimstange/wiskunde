@@ -44,13 +44,9 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
     
     c = self.canvas_1
     richting = 0
-#   lengte =3
-#    hoek_gr = int(self.hoek_gr.text)
-#    hoek = float(hoek_gr)/180 * m.pi
     x = self.start_x.text
     y = self.start_y.text
     kleur = rood
-
         
     for k in self.voorschrift:
         x_n, y_n = x+float(self.lengte.text)*m.cos(richting),y+float((self.lengte.text))*m.sin(richting)
@@ -74,15 +70,6 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
             richting += float(self.hoek_gr.text)/180 * m.pi
         elif k == "-":
             richting -= float(self.hoek_gr.text)/180 * m.pi
-
-  def axioma_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
-#    axioma = self.axioma.text
-#    schema = self.schema.text
-#    self.voorschrift = self.productie(axioma,schema,2)
-#    print(self.voorschrift)
-#    self.canvas_1.reset_context
-#    self.canvas_1_show
 
   def button_1_click(self, **event_args):
     """Deze methode wordt uitgevoerd als op de button 'teken fractal' wordt geklikt"""
@@ -144,7 +131,6 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
       self.start_x.text = 100
       self.start_y.text = 200
     elif self.soort.selected_value == "Archipel van Mandelbrot":
-#      antwoord = alert("Dit is nog niet geimplementeerd")
       self.hoek_gr.text = 90
       self.axioma.text = "F+F+F+F"
       self.schema.text = "F-f+FF-F-FF-Ff-FF+f-FF+F+FF+Ff+FF"

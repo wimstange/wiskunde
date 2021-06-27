@@ -1,0 +1,18 @@
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: "<center style=\"font-style:italic; color:#888; margin: 3em;\"\
+      >\n  Eenvoudige Fractals\n\nIn het boek Computer Simulaties uit 1992 geeft Hans\
+      \ Lauwerier een uitleg van Fractals. Hij beschrijft een methode om de Fractals\
+      \ te tekenen met behulp van eenvoudige tekeninstructies. \nEen tekeninstructie\
+      \ bestaat uit een rij tekens F, f, +, -. De betekenis van deze tekens is:\n\
+      F : maak een stap met de tekenpen op het papier\nf: maak een stap zonder de\
+      \ tekenpen op papier\n+: tel bij de richtingshoek van de beweging een aantal\
+      \ graden op \n-: trek van de richtingshoek van de beweging een aantal graden\
+      \ af\n\nHierbij is de stapgrootte en de toe- of afname van de richtingshoek\
+      \ vooraf vastgelegd. Fractals ontstaan door in de tekeninstructies een aantal\
+      \ keren alle F-en te vervangen door een andere tekeninstructie. De tekeninstructie\
+      \ waarmee gestart wordt is het axioma. De tekeninstructie waardoor de F wordt\
+      \ vervangen heet een schema.\n\n</center>"}
+components: []
+is_package: true
