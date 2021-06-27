@@ -211,8 +211,14 @@ components:
     event_bindings: {click: uitleg_click}
   event_bindings: {}
 - type: ColumnPanel
-  properties: {role: card}
+  properties: {role: card, col_widths: '{}'}
   name: card_1
   layout_properties: {grid_position: 'LFTBHW,AUPLBO'}
   event_bindings: {}
+  components:
+  - type: form:Eenvoudige_Fractals.uitleg
+    properties: {}
+    name: uitleg_1
+    layout_properties: {grid_position: 'CYMLGC,VYHAAK'}
 is_package: true
+custom_component: false

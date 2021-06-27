@@ -16,3 +16,4 @@ container:
       \ vervangen heet een schema.\n\n</center>"}
 components: []
 is_package: true
+custom_component: false
