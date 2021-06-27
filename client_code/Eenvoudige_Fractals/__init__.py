@@ -1,6 +1,7 @@
 from ._anvil_designer import Eenvoudige_FractalsTemplate
 from anvil import *
 import math as m
+from Eenvoudige_Fractals.uitleg import uitleg
 
 
 class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
@@ -146,6 +147,11 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
   def canvas_1_reset(self, **event_args):
     """This method is called when the canvas is reset and cleared, such as when the window resizes, or the canvas is added to a form."""
     self.canvas_1_show()
+
+  def uitleg_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    alert(content=Eenvoudige_Fractals.uitleg())
+
 
 
 

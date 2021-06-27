@@ -202,10 +202,13 @@ components:
     layout_properties: {}
     event_bindings: {click: button_1_click}
   - type: Button
-    properties: {text: button_2}
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: uitleg, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
     name: uitleg
     layout_properties: {}
-    event_bindings: {}
+    event_bindings: {click: uitleg_click}
   event_bindings: {}
 - type: ColumnPanel
   properties: {role: card}
