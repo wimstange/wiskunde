@@ -1,5 +1,5 @@
 services: []
-startup: {type: form, module: peanolijn}
+startup: {type: form, module: Wiskunde}
 package_name: Wiskunde
 allow_embedding: true
 name: Wiskunde

@@ -10,5 +10,5 @@ components:
     visible: true, spacing_above: small, spacing_below: small, background: '#e1e1e1'}
   name: canvas_1
   layout_properties: {grid_position: 'ZEBEKE,XEVDSH'}
-  event_bindings: {show: canvas_1_show}
+  event_bindings: {show: canvas_1_show, reset: canvas_1_reset}
 is_package: true
