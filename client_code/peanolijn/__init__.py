@@ -42,11 +42,11 @@ class peanolijn(peanolijnTemplate):
       return (x, y), richting
   
   
-    nmax = 7 #aantal iteraties
+    nmax = 7#antal iteraties
     x, y = 175, 30 #beginpositie
     richting = 0
     hoek =  -m.pi/2 #verandering van richting bij commando + of -
-    lengte = 5 # stapgrootte bij commando F of f
+    lengte =  17# stapgrootte bij commando F of f
     axioma = "X" # startfiguur. Wordt bij eerste generatie gevuld met schema1
     schema1 = "-YF+XFX+FY-"
     schema2 = "+XF-YFY-FX+"
