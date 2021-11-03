@@ -1,9 +1,12 @@
-services: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
 startup: {type: form, module: Wiskunde}
 package_name: Wiskunde
 allow_embedding: true
 name: Wiskunde
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
 metadata: {}
-db_schema: []
+db_schema: {}
 renamed: true
