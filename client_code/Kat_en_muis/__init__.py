@@ -216,7 +216,7 @@ class Kat_en_muis(Kat_en_muisTemplate):
     """This method is called when the button is clicked"""
     self.muisPoint = None
     self.katPoints = []
-    self.muisBeurt = True
+    self.muisBeurt = False
     self.background = "rgba(223,246,142,1)"
     self.drawboard()
 
