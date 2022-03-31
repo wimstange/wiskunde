@@ -12,6 +12,7 @@ from ..Boom_van_Pythagoras import Boom_van_Pythagoras
 from ..Leven import Leven
 from ..Eenvoudige_Fractals import Eenvoudige_Fractals
 from ..peanolijn import peanolijn
+from ..Barnsley_Fern import Barnsley_Fern
 
 class Wiskunde(WiskundeTemplate):
   def __init__(self, **properties):
@@ -69,6 +70,12 @@ class Wiskunde(WiskundeTemplate):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
     self.content_panel.add_component(peanolijn())
+
+  def link_10_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      self.content_panel.clear()
+      self.content_panel.add_component(Barnsley_Fern())
+
 
 
 
