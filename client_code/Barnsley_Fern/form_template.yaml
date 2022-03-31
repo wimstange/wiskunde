@@ -35,9 +35,8 @@ components:
   name: button_1
   layout_properties: {grid_position: 'OQZRYW,PVDRHI'}
   event_bindings: {click: button_1_click}
-- type: Plot
-  properties: {spacing_above: small, spacing_below: small, height: '900', visible: true,
-    tooltip: '', interactive: true}
-  name: plot_1
-  layout_properties: {grid_position: 'ECSVVS,FMTSRC'}
+- type: Image
+  properties: {}
+  name: image_1
+  layout_properties: {grid_position: 'RPBUFE,ISMWGJ'}
 is_package: true
