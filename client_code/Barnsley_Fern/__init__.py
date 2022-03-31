@@ -5,7 +5,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import random
-import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 
 class Barnsley_Fern(Barnsley_FernTemplate):
     def __init__(self, **properties):
@@ -13,6 +13,7 @@ class Barnsley_Fern(Barnsley_FernTemplate):
         self.init_components(**properties)
 
         # Any code you write here will run when the form opens.
+        self.draw_fern(int(self.text_box_1.text))
 
         
         
@@ -59,26 +60,33 @@ class Barnsley_Fern(Barnsley_FernTemplate):
     
     def transform(self, p):
         # list of transformation functions
-        transformations = [transformation_1, transformation_2,
-                            transformation_3, transformation_4]
+        transformations = [self.transformation_1, self.transformation_2,
+                            self.transformation_3, self.transformation_4]
         probability = [0.85, 0.07, 0.07, 0.01]
         # pick a random transformation function and call it
-        tindex = get_index(probability)
+        tindex = self.get_index(probability)
         t = transformations[tindex]
         x, y = t(p)
         return x, y
     
     def draw_fern(self, n):
         # We start with (0, 0)
-        x = [0]
-        y = [0]
+        x_rij = [0]
+        y_rij = [0]
         x1, y1 = 0, 0
         for i in range(n):
             x1, y1 = self.transform((x1, y1))
-        x.append(x1)
-        y.append(y1)
+            x_rij.append(x1)
+            y_rij.append(y1)
         
         # Plot the points
-        plt.plot(x, y, 'o')
-        plt.title('Fern with {0} points'.format(n))
-        plt.show()
+        fig = go.Scatter(x=x_rij, y=y_rij, mode="markers")  
+    
+    
+        self.plot_1.data = fig
+        self.plot_1.layout = {'title': 'Barnsley Fern'}
+
+    def button_1_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        self.draw_fern(int(self.text_box_1.text))
+
