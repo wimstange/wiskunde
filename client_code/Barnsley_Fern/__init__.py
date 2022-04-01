@@ -80,14 +80,7 @@ class Barnsley_Fern(Barnsley_FernTemplate):
             y_rij.append(y1)
         
         # Plot the points
-        media_obj = anvil.server.call('make_plot')
-        self.image_1.source = media_obj
-        self.download_link.url = media_obj
-        
-        
         fig = go.Scatter(x=x_rij, y=y_rij, mode="markers")  
-    
-    
         self.plot_1.data = fig
         self.plot_1.layout = {'title': 'Barnsley Fern'}
 

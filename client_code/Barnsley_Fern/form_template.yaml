@@ -35,8 +35,8 @@ components:
   name: button_1
   layout_properties: {grid_position: 'OQZRYW,PVDRHI'}
   event_bindings: {click: button_1_click}
-- type: Image
+- type: Plot
   properties: {}
-  name: image_1
-  layout_properties: {grid_position: 'RPBUFE,ISMWGJ'}
+  name: plot_1
+  layout_properties: {grid_position: 'BOIDPH,JPMROP'}
 is_package: true
