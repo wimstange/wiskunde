@@ -79,7 +79,7 @@ class Eenvoudige_Fractals(Eenvoudige_FractalsTemplate):
   def button_1_click(self, **event_args):
     """Deze methode wordt uitgevoerd als op de button 'teken fractal' wordt geklikt"""
     if 4 < int(self.iteraties.text) or int(self.iteraties.text) <1:
-      antwoord = alert("De iteratiewaarde mag hoogstens 4 zijn.")
+      antwoord = alert("De iteratiewaarde moet groter dan nul en hoogstens 4 zijn.")
       self.iteraties.text = "4"             
     self.voorschrift = self.productie(self.axioma.text,self.schema.text,self.schema2.text,int(self.iteraties.text))
     self.canvas_1.reset_context()

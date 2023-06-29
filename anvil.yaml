@@ -6,7 +6,8 @@ startup: {type: form, module: Wiskunde}
 package_name: Wiskunde
 allow_embedding: true
 name: Wiskunde
-runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
+  server_spec: null}
 metadata: {}
 startup_form: null
 db_schema: {}
