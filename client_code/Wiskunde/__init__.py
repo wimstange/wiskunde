@@ -14,6 +14,7 @@ from ..Leven import Leven
 from ..Eenvoudige_Fractals import Eenvoudige_Fractals
 from ..peanolijn import peanolijn
 from ..Barnsley_Fern import Barnsley_Fern
+from ..Margaret_Kepner import Margaret_Kepner
 
 class Wiskunde(WiskundeTemplate):
   def __init__(self, **properties):
@@ -77,6 +78,10 @@ class Wiskunde(WiskundeTemplate):
       self.content_panel.clear()
       self.content_panel.add_component(Barnsley_Fern())
 
+  def link_11_click(self, **event_args):
+      """This method is called when the link is clicked"""
+      self.content_panel.clear()
+      self.content_panel.add_component(Margaret_Kepner())
 
 
 

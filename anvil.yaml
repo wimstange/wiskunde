@@ -2,7 +2,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: Wiskunde}
+startup: {type: form, module: Margaret_Kepner}
 package_name: Wiskunde
 allow_embedding: true
 name: Wiskunde
