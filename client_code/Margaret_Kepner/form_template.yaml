@@ -16,7 +16,7 @@ components:
     name: button_1
     layout_properties: {grid_position: 'PZYOPC,RNNPKQ', row_background: 'theme:Secondary
         500'}
-    event_bindings: {show: canvas_1_show}
+    event_bindings: {show: maak_vierkant}
   - type: Canvas
     properties: {height: 329}
     name: canvas_1
