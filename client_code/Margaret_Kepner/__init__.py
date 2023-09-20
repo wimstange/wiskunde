@@ -12,6 +12,7 @@ class Margaret_Kepner(Margaret_KepnerTemplate):
         # Any code you write here will run when the form opens.
     def canvas_1_show(self, **event_args):
         """This method is called when the Canvas is shown on the screen"""
+        self.maak_vierkant()
          
     def maak_vierkant(self):
         c = self.canvas_1
@@ -28,4 +29,4 @@ class Margaret_Kepner(Margaret_KepnerTemplate):
   
         c.fill()
         c.stroke()
-        c.show()
+        

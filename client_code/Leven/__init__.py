@@ -86,7 +86,7 @@ class Leven(LevenTemplate):
     """This method is called when the user presses Enter in this text box"""
     
     self.N = int(self.text_box_1.text)
-    self,wereld = []
+    self.wereld = []
     
 
   def timer_1_tick(self, **event_args):
