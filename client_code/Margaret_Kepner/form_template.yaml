@@ -8,20 +8,11 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
-  - type: Button
-    properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Start, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: 'theme:Secondary
-        500', bold: false, underline: false, icon: ''}
-    name: button_1
-    layout_properties: {grid_position: 'PZYOPC,RNNPKQ', row_background: 'theme:Secondary
-        500'}
-    event_bindings: {click: maak_vierkant}
   - type: Canvas
     properties: {height: 329}
     name: canvas_1
     layout_properties: {grid_position: 'OGMRTC,FPSDEA'}
-    event_bindings: {show: canvas_1_show}
+    event_bindings: {reset: canvas_1_show}
 - type: FlowPanel
   properties: {}
   name: navbar_links
