@@ -1,0 +1,12 @@
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: '<input type = ''color''>
+
+      '}
+components: []
+custom_component: true
+properties:
+- {name: align, type: 'text[]', default_value: null, default_binding_prop: true}
+events:
+- {name: change, description: '', default_event: true}
