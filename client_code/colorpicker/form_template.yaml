@@ -2,4 +2,5 @@ container: {type: ColumnPanel}
 components: []
 is_package: true
 custom_component: true
-properties: []
+properties:
+- {name: prop, type: string, default_value: '', default_binding_prop: true, important: true}
