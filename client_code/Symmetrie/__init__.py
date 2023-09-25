@@ -32,6 +32,11 @@ class Symmetrie(SymmetrieTemplate):
         c.stroke()
         print("Ik heb geklikt!")
 
+    def canvas_1_reset(self, **event_args):
+        """This method is called when the canvas is reset and cleared, such as when the window resizes, or the canvas is added to a form."""
+        self.link_1_click()
+
+
 
         
 
